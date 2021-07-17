@@ -61,7 +61,7 @@ const App = () => {
       setLastPage(page);
     }
 
-    console.log({ page });
+    // console.log({ page });
   }, [page]);
 
   // useEffect(() => {
