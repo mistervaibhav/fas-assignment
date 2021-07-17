@@ -56,9 +56,9 @@ const App = () => {
     getData(page);
   }, []);
 
-  useEffect(() => {
-    console.log({ page });
-  }, [page]);
+  // useEffect(() => {
+  //   console.log({ page });
+  // }, [page]);
   // useEffect(() => {
   //   console.log({ items });
   // }, [items]);
@@ -101,7 +101,7 @@ const App = () => {
 
     // console.log({ items });
 
-    const endpoint = `http://localhost:5000/api/data`;
+    const endpoint = `/api/data`;
 
     // console.log('fetching data ');
 
