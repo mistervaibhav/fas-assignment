@@ -99,11 +99,11 @@ const App = () => {
 
     setIsLoading(true);
 
-    console.log({ items });
+    // console.log({ items });
 
     const endpoint = `http://localhost:5000/api/data`;
 
-    console.log('fetching data ');
+    // console.log('fetching data ');
 
     try {
       const response = await axios.get(endpoint, { params: { page: nextPage } });

@@ -1,0 +1,26 @@
+{
+  "name": "fashinza-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "cd api && npm install && npm run start",
+    "heroku-postbuild": "cd app && yarn install && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistervaibhav/fas-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mistervaibhav/fas-assignment/issues"
+  },
+  "homepage": "https://github.com/mistervaibhav/fas-assignment#readme"
+}
