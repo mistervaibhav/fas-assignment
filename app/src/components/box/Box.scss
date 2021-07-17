@@ -1,0 +1,54 @@
+.box {
+  // border: 3px solid #333333;
+  border-radius: 8px;
+  height: 300px;
+  width: 1300px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  z-index: 5;
+  // background: turquoise;
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    overflow: hidden;
+    gap: 25px;
+    max-width: fit-content;
+    // background: pink;
+    // border: 1px solid green;
+  }
+
+  &-button {
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    outline: none;
+    position: absolute;
+    bottom: 45%;
+    cursor: pointer;
+    transition: display 5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    z-index: 10;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+
+  #prev {
+    left: 0;
+    margin-left: -24px;
+  }
+
+  #next {
+    right: 0;
+    margin-right: -24px;
+  }
+}
