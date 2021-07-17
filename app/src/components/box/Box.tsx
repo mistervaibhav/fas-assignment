@@ -23,7 +23,6 @@ const Box = ({
       <div className='box-content' ref={contentRef}>
         {children}
       </div>
-
       {isNextVisible && (
         <button id='next' className='box-button' onClick={onNextClick}>
           {isLoading ? (
@@ -35,17 +34,6 @@ const Box = ({
           )}
         </button>
       )}
-      {/* {isNextVisible && (
-        <>
-          {isLoading ? (
-            <div id='spinner'>
-              <div className='loader'></div>
-            </div>
-          ) : (
-            
-          )}
-        </>
-      )} */}
     </div>
   );
 };

@@ -77,23 +77,23 @@ const App = () => {
   }, [index]);
 
   function prevClickHandler() {
-    const container = containerRef.current;
-    const containerWidth = container.offsetWidth;
+    // const container = containerRef.current;
+    // const containerWidth = container.offsetWidth;
 
     let slide = index - 1;
 
-    setTransition(slide * containerWidth);
+    setTransition(slide * 1250);
     setIndex(slide);
     setIsNextVisible(true);
   }
 
   function nextClickHandler() {
-    const container = containerRef.current;
-    const containerWidth = container.offsetWidth;
+    // const container = containerRef.current;
+    // const containerWidth = container.offsetWidth;
 
     let slide = index + 1;
 
-    setTransition(slide * containerWidth);
+    setTransition(slide * 1250);
     setIndex(slide);
   }
 
