@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { ReactComponent as Next } from '../../assets/next.svg';
 import { ReactComponent as Prev } from '../../assets/prev.svg';
 
@@ -13,6 +11,7 @@ const Box = ({
   contentRef,
   isPrevVisible,
   isNextVisible,
+  isLoading,
 }: any) => {
   return (
     <div className='box' ref={containerRef}>
@@ -23,13 +22,30 @@ const Box = ({
       )}
       <div className='box-content' ref={contentRef}>
         {children}
-        {/* <p>Loading</p> */}
       </div>
+
       {isNextVisible && (
         <button id='next' className='box-button' onClick={onNextClick}>
-          <Next />
+          {isLoading ? (
+            <div id='spinner'>
+              <div className='loader'></div>
+            </div>
+          ) : (
+            <Next />
+          )}
         </button>
       )}
+      {/* {isNextVisible && (
+        <>
+          {isLoading ? (
+            <div id='spinner'>
+              <div className='loader'></div>
+            </div>
+          ) : (
+            
+          )}
+        </>
+      )} */}
     </div>
   );
 };

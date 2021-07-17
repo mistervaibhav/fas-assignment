@@ -12,7 +12,7 @@ const App = () => {
   const [transition, setTransition] = useState<any>();
 
   const [page, setPage] = useState<number>(1);
-  // const [max, setMax] = useState<number>(9);
+  const [lastPage, setLastPage] = useState<number>(1);
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -27,6 +27,7 @@ const App = () => {
   const lastItemRef = useCallback(
     (node) => {
       if (isLastItemReached) {
+        console.log('END OF LIST');
         return;
       }
 
@@ -36,7 +37,6 @@ const App = () => {
 
       observer.current = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          console.log('last item is visible');
           let nextPage = page + 1;
           setPage(nextPage);
           getData(nextPage);
@@ -56,9 +56,14 @@ const App = () => {
     getData(page);
   }, []);
 
-  // useEffect(() => {
-  //   console.log({ page });
-  // }, [page]);
+  useEffect(() => {
+    if (page > lastPage) {
+      setLastPage(page);
+    }
+
+    console.log({ page });
+  }, [page]);
+
   // useEffect(() => {
   //   console.log({ items });
   // }, [items]);
@@ -139,6 +144,7 @@ const App = () => {
       onNextClick={nextClickHandler}
       isPrevVisible={isPrevVisible}
       isNextVisible={isNextVisible}
+      isLoading={isLoading}
     >
       {items.map((item, i) => {
         if (i === items.length - 1) {
